@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walter & Alec Millsap — Master Travel Itinerary | ShoTravel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --navy-light: #1A365D;
+    --gold: #C9973A;
+    --gold-light: #F0C97A;
+    --cream: #FAF7F2;
+    --slate: #4A5568;
+    --sky: #E8F2FC;
+    --border: #E2D9CC;
+    --accent-green: #2D6A4F;
+    --accent-red: #C0392B;
+    --white: #FFFFFF;
+    --shadow: 0 4px 24px rgba(11,31,58,0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 70px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  .cover-inner { position: relative; max-width: 860px; margin: 0 auto; z-index: 2; }
+  
+  .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; }
+  .agency-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: var(--navy);
+    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 8px 16px; border-radius: 4px; box-shadow: 0 2px 10px rgba(201,151,58,0.3);
+  }
+  .action-btn {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: var(--white); padding: 8px 16px; border-radius: 4px;
+    font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;
+  }
+  .action-btn:hover { background: rgba(255,255,255,0.2); }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 600; line-height: 1.1; margin-bottom: 12px;
+  }
+  .cover h1 em { font-style: italic; color: var(--gold-light); font-weight: 400; }
+  .cover-sub { font-size: 18px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 40px; }
+  
+  .cover-meta { display: flex; flex-wrap: wrap; gap: 16px; }
+  .meta-pill {
+    background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; padding: 12px 20px; flex: 1; min-width: 140px;
+    backdrop-filter: blur(4px);
+  }
+  .meta-pill .label {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-light); font-family: 'DM Mono', monospace; display: block; margin-bottom: 4px;
+  }
+  .meta-pill .value { font-size: 15px; font-weight: 500; color: var(--white); }
+
+  /* ── TIMELINE SPINE ── */
+  .timeline { max-width: 880px; margin: -30px auto 0; padding: 0 20px 60px; position: relative; z-index: 10; }
+
+  /* ── DAY CARD ── */
+  .day-card {
+    margin-bottom: 40px; border-radius: 12px; overflow: hidden;
+    box-shadow: var(--shadow); background: var(--white);
+    border: 1px solid var(--border);
+  }
+
+  .day-header {
+    background: var(--white); color: var(--navy);
+    padding: 24px 28px; display: flex; align-items: center; gap: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .day-num {
+    font-family: 'Playfair Display', serif; font-size: 42px; font-style: italic;
+    color: var(--gold); line-height: 1; min-width: 50px;
+  }
+  .day-label {
+    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--slate); margin-bottom: 4px;
+  }
+  .day-title { font-size: 22px; font-weight: 700; color: var(--navy); }
+  .day-date {
+    margin-left: auto; text-align: right; font-size: 14px;
+    color: var(--slate); font-weight: 500; background: var(--sky);
+    padding: 8px 16px; border-radius: 8px; color: var(--navy-light);
+  }
+
+  .card-body { padding: 28px; }
+
+  /* ── SECTIONS ── */
+  .section-title {
+    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::before { content: attr(data-icon); font-size: 16px; }
+
+  /* ── FLIGHT BLOCK ── */
+  .flight-box { border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 28px; }
+  .flight-row { display: flex; align-items: center; gap: 0; margin-bottom: 16px; }
+  .flight-city { text-align: center; min-width: 70px; }
+  .flight-city .code { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; line-height: 1; color: var(--navy); }
+  .flight-city .name { font-size: 11px; color: var(--slate); margin-top: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+  .flight-city .time { font-size: 14px; font-weight: 600; color: var(--navy); margin-top: 6px; }
+  .flight-middle { flex: 1; text-align: center; padding: 0 16px; position: relative; }
+  .flight-line { height: 2px; background: var(--border); position: relative; margin: 12px 0; }
+  .flight-line::after { content: '✈'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--white); padding: 0 8px; font-size: 16px; color: var(--gold); }
+  .flight-info { font-size: 12px; color: var(--slate); font-weight: 500; }
+  
+  .flight-meta { display: flex; gap: 8px; flex-wrap: wrap; background: var(--sky); padding: 12px; border-radius: 6px; }
+  .flight-tag { font-size: 11px; font-weight: 600; background: var(--white); border: 1px solid rgba(11,31,58,0.1); color: var(--navy); padding: 4px 10px; border-radius: 4px; font-family: 'DM Mono', monospace; display: flex; align-items: center; gap: 6px;}
+  .flight-tag.airline { background: var(--navy); color: var(--white); border: none; }
+
+  /* ── HOTEL BLOCK ── */
+  .hotel-block { display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: stretch; background: var(--white); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; margin-bottom: 28px; }
+  .hotel-img-wrap { background: #eee; position: relative; }
+  .hotel-img-wrap img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;}
+  .hotel-detail { padding: 20px 20px 20px 0; }
+  .hotel-detail h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 6px; color: var(--navy); }
+  .hotel-address { font-size: 13px; color: var(--slate); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
+  
+  .confirm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .confirm-item { background: var(--cream); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; }
+  .confirm-item .ci-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--slate); font-family: 'DM Mono', monospace; display: block; margin-bottom: 4px; }
+  .confirm-item .ci-value { font-size: 14px; font-weight: 600; color: var(--navy); }
+  .confirm-item .ci-highlight { color: var(--gold); font-size: 16px; }
+
+  .hotel-actions { display: flex; gap: 10px; }
+  .btn { text-decoration: none; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 4px; text-align: center; transition: 0.2s; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-primary { background: var(--navy); color: var(--white); border: 1px solid var(--navy); }
+  .btn-primary:hover { background: var(--navy-light); }
+  .btn-outline { background: transparent; color: var(--navy); border: 1px solid var(--border); }
+  .btn-outline:hover { background: var(--cream); border-color: var(--navy); }
+
+  /* ── HIGHLIGHTS NOTE ── */
+  .note-box { background: #FFF9F0; border-left: 4px solid var(--gold); padding: 14px 18px; font-size: 13px; color: var(--navy); margin-bottom: 28px; display: flex; gap: 12px; align-items: flex-start; border-radius: 0 8px 8px 0; }
+  .note-icon { font-size: 18px; line-height: 1; }
+  .note-content strong { font-weight: 600; display: block; margin-bottom: 4px; font-size: 14px; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 40px 20px; font-size: 13px; }
+  footer strong { color: var(--gold-light); font-weight: 500; }
+
+  @media (max-width: 768px) {
+    .hotel-block { grid-template-columns: 1fr; }
+    .hotel-img-wrap { height: 200px; }
+    .hotel-detail { padding: 20px; }
+    .day-header { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px; }
+    .day-date { margin-left: 0; text-align: left; width: 100%; }
+    .flight-row { flex-direction: column; gap: 16px; }
+    .flight-line { display: none; }
+    .flight-middle { padding: 12px 0; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border); width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-inner">
+    <div class="header-top">
+      <div class="agency-badge">✈ ShoTravel Agency</div>
+      <button class="action-btn">📥 Download PDF</button>
+    </div>
+    <h1>Walter & Alec <em>Millsap</em></h1>
+    <p class="cover-sub">Master Travel Itinerary · April 2–5, 2026</p>
+    
+    <div class="cover-meta">
+      <div class="meta-pill"><span class="label">Travelers</span><span class="value">Walter & Alec Millsap (2)</span></div>
+      <div class="meta-pill"><span class="label">Duration</span><span class="value">4 Days · 3 Nights</span></div>
+      <div class="meta-pill"><span class="label">Primary Airlines</span><span class="value">Delta & United</span></div>
+      <div class="meta-pill"><span class="label">Route</span><span class="value">LAX → ATL → MSY → IAH → LAX</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="timeline">
+
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-num">01</div>
+    <div class="day-title-wrap">
+      <div class="day-label">Day One</div>
+      <div class="day-title">Los Angeles → Atlanta, GA</div>
+    </div>
+    <div class="day-date">Thursday<br>April 2, 2026</div>
+  </div>
+  <div class="card-body">
+
+    <div class="section-title" data-icon="🛫">Departure Flight</div>
+    <div class="flight-box">
+      <div class="flight-row">
+        <div class="flight-city"><div class="code">LAX</div><div class="name">Los Angeles</div><div class="time">7:00 AM</div></div>
+        <div class="flight-middle"><div class="flight-info">Nonstop · 4h 8m</div><div class="flight-line"></div><div class="flight-info">Main Classic</div></div>
+        <div class="flight-city"><div class="code">ATL</div><div class="name">Atlanta</div><div class="time">2:08 PM</div></div>
+      </div>
+      <div class="flight-meta">
+        <span class="flight-tag airline">Delta Air Lines</span>
+        <span class="flight-tag">DL 515</span>
+        <span class="flight-tag">👥 2 Passengers</span>
+      </div>
+    </div>
+
+    <div class="section-title" data-icon="🏨">Accommodation</div>
+    <div class="hotel-block">
+      <div class="hotel-img-wrap">
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80" alt="Reverb Atlanta">
+      </div>
+      <div class="hotel-detail">
+        <h3>Reverb by Hard Rock Downtown</h3>
+        <div class="hotel-address">📍 89 Centennial Olympic Park Dr NW, Atlanta, GA</div>
+        <div class="confirm-grid">
+          <div class="confirm-item"><span class="ci-label">Confirmation #</span><span class="ci-value ci-highlight">984335566</span></div>
+          <div class="confirm-item"><span class="ci-label">Check-In</span><span class="ci-value">After 3:00 PM</span></div>
+        </div>
+        <div class="hotel-actions">
+          <a href="#" class="btn btn-primary">🗺️ Get Directions</a>
+          <a href="#" class="btn btn-outline">📞 Call Hotel</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <div class="note-icon">💡</div>
+      <div class="note-content">
+        <strong>Venue Proximity Advantage</strong>
+        You are staying just 0.2 miles from the Mercedes-Benz Stadium / State Farm Arena complex. This is an easy, highly walkable commute for tonight's show logistics.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-num">02</div>
+    <div class="day-title-wrap">
+      <div class="day-label">Day Two</div>
+      <div class="day-title">Atlanta → New Orleans, LA</div>
+    </div>
+    <div class="day-date">Friday<br>April 3, 2026</div>
+  </div>
+  <div class="card-body">
+
+    <div class="section-title" data-icon="🛫">Mid-Tour Flight (Check out by 11:00 AM)</div>
+    <div class="flight-box">
+      <div class="flight-row">
+        <div class="flight-city"><div class="code">ATL</div><div class="name">Atlanta</div><div class="time">1:59 PM</div></div>
+        <div class="flight-middle"><div class="flight-info">Nonstop · 1h 33m</div><div class="flight-line"></div><div class="flight-info">Main Classic</div></div>
+        <div class="flight-city"><div class="code">MSY</div><div class="name">New Orleans</div><div class="time">2:32 PM</div></div>
+      </div>
+      <div class="flight-meta">
+        <span class="flight-tag airline">Delta Air Lines</span>
+        <span class="flight-tag">DL 3157</span>
+        <span class="flight-tag">👥 2 Passengers</span>
+      </div>
+    </div>
+
+    <div class="section-title" data-icon="🏨">Accommodation</div>
+    <div class="hotel-block">
+      <div class="hotel-img-wrap">
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=600&q=80" alt="Holiday Inn NOLA">
+      </div>
+      <div class="hotel-detail">
+        <h3>Holiday Inn Downtown Superdome</h3>
+        <div class="hotel-address">📍 330 Loyola Ave, New Orleans, LA 70112</div>
+        <div class="confirm-grid">
+          <div class="confirm-item"><span class="ci-label">Confirmation #</span><span class="ci-value ci-highlight">984368562</span></div>
+          <div class="confirm-item"><span class="ci-label">Check-In</span><span class="ci-value">After 4:00 PM</span></div>
+        </div>
+        <div class="hotel-actions">
+          <a href="#" class="btn btn-primary">🗺️ Get Directions</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="note-box">
+      <div class="note-icon">🎷</div>
+      <div class="note-content">
+        <strong>Smoothie King Center Access</strong>
+        This property is exceptionally close to the Superdome and Smoothie King Center. Perfect for a quick load-in and an easy return after the show.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="day-card">
+  <div class="day-header">
+    <div class="day-num">03</div>
+    <div class="day-title-wrap">
+      <div class="day-label">Day Three</div>
+      <div class="day-title">New Orleans → Houston, TX</div>
+    </div>
+    <div class="day-date">Saturday<br>April 4, 2026</div>
+  </div>
+  <div class="card-body">
+
+    <div class="section-title" data-icon="🛫">Mid-Tour Flight (Check out by 11:00 AM)</div>
+    <div class="flight-box">
+      <div class="flight-row">
+        <div class="flight-city"><div class="code">MSY</div><div class="name">New Orleans</div><div class="time">12:00 PM</div></div>
+        <div class="flight-middle"><div class="flight-info">Nonstop · 1h 26m</div><div class="flight-line"></div><div class="flight-info">Economy</div></div>
+        <div class="flight-city"><div class="code">IAH</div><div class="name">Houston</div><div class="time">1:26 PM</div></div>
+      </div>
+      <div class="flight-meta">
+        <span class="flight-tag airline" style="background:#005DAA;">United Airlines</span>
+        <span class="flight-tag">UA 2027</span>
+        <span class="flight-tag">👥 2 Passengers</span>
+      </div>
+    </div>
+
+    <div class="section-title" data-icon="🏨">Accommodation</div>
+    <div class="hotel-block">
+      <div class="hotel-img-wrap">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="SpringHill Suites IAH">
+      </div>
+      <div class="hotel-detail">
+        <h3>SpringHill Suites Intercontinental Airport</h3>
+        <div class="hotel-address">📍 15840 John F Kennedy Blvd, Houston, TX</div>
+        <div class="confirm-grid">
+          <div class="confirm-item"><span class="ci-label">Confirmation #</span><span class="ci-value ci-highlight">984375190</span></div>
+          <div class="confirm-item"><span class="ci-label">Check-In</span><span class="ci-value">After 3:00 PM</span></div>
+        </div>
+        <div class="hotel-actions">
+          <a href="#" class="btn btn-primary">🗺️ Get Directions</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-box" style="border-color: var(--accent-red); background: #FFF5F5;">
+      <div class="note-icon">⚠️</div>
+      <div class="note-content">
+        <strong style="color: var(--accent-red);">Logistics Alert: Venue Commute</strong>
+        You are staying at the IAH Airport to facilitate Sunday's early morning departure. Please note that the commute to the Toyota Center downtown will be approx. 25-35 minutes each way. Plan ground transport accordingly.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="day-card">
+  <div class="day-header" style="background: linear-gradient(135deg, #0B1F3A 0%, #1A365D 100%);">
+    <div class="day-num" style="color:var(--white);">04</div>
+    <div class="day-title-wrap">
+      <div class="day-label" style="color:rgba(255,255,255,0.6);">Day Four · Homeward</div>
+      <div class="day-title" style="color:var(--white);">Houston → Los Angeles</div>
+    </div>
+    <div class="day-date" style="background:rgba(255,255,255,0.1); color:var(--white);">Sunday<br>April 5, 2026</div>
+  </div>
+  <div class="card-body">
+
+    <div class="section-title" data-icon="🛫">Final Flight Home</div>
+    <div class="flight-box" style="background: #F8FAFC; border-color: #CBD5E1;">
+      <div class="flight-row">
+        <div class="flight-city"><div class="code">IAH</div><div class="name">Houston</div><div class="time">6:00 AM</div></div>
+        <div class="flight-middle"><div class="flight-info">Nonstop · 3h 40m</div><div class="flight-line"></div><div class="flight-info">Basic Economy</div></div>
+        <div class="flight-city"><div class="code">LAX</div><div class="name">Los Angeles</div><div class="time">7:40 AM</div></div>
+      </div>
+      <div class="flight-meta">
+        <span class="flight-tag airline" style="background:#005DAA;">United Airlines</span>
+        <span class="flight-tag">UA 2431</span>
+        <span class="flight-tag">👥 Walter & Alec</span>
+      </div>
+    </div>
+
+    <div class="note-box" style="background: #F0FDF4; border-color: var(--accent-green); color: #166534; margin-bottom: 0;">
+      <div class="note-icon">🏠</div>
+      <div class="note-content">
+        <strong style="color: #166534;">Tour Complete!</strong>
+        Your airport hotel makes this early 6:00 AM departure significantly easier. Safe travels back to LAX, and congratulations on a successful tour run!
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <div style="margin-bottom:8px; font-size:15px; color:rgba(255,255,255,0.9);">
+    Prepared with ♥ by <strong>ShoTravel Agency</strong> for Walter Millsap
+  </div>
+  All times shown are local to the destination.
+</footer>
+
+</body>
+</html>
