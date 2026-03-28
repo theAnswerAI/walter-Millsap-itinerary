@@ -140,12 +140,19 @@
 
   /* ── HOTEL BLOCK ── */
   .hotel-block { display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: stretch; background: var(--white); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; margin-bottom: 28px; }
-  .hotel-img-wrap { background: #eee; min-height: 220px; position: relative; }
+  .hotel-img-wrap { background: #eee; min-height: 240px; position: relative; }
   .hotel-img-wrap img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;}
   .hotel-detail { padding: 20px 20px 20px 0; }
   .hotel-detail h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 6px; color: var(--navy); }
-  .hotel-address { font-size: 13px; color: var(--slate); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
   
+  .hotel-address { font-size: 13px; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 6px; }
+  .hotel-address a { color: var(--slate); text-decoration: none; transition: color 0.2s; border-bottom: 1px dashed var(--border); }
+  .hotel-address a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* Distance Badges */
+  .travel-times { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tt-badge { background: var(--sky); color: var(--navy-light); padding: 6px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; font-family: 'DM Mono', monospace; display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(11,31,58,0.05); }
+
   .confirm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
   .confirm-item { background: var(--cream); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; }
   .confirm-item .ci-label { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--slate); font-family: 'DM Mono', monospace; display: block; margin-bottom: 4px; }
@@ -181,6 +188,7 @@
   @media print {
     .action-btn { display: none; }
     .day-card { page-break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+    .hotel-address a { border-bottom: none; color: var(--navy); }
   }
 
   @media (max-width: 768px) {
@@ -249,13 +257,25 @@
       </div>
       <div class="hotel-detail">
         <h3>Reverb by Hard Rock Downtown</h3>
-        <div class="hotel-address">📍 89 Centennial Olympic Park Dr NW, Atlanta, GA</div>
+        
+        <div class="hotel-address">
+          <span>📍</span> 
+          <a href="https://www.google.com/maps/search/?api=1&query=89+Centennial+Olympic+Park+Dr+NW,+Atlanta,+GA" target="_blank">
+            89 Centennial Olympic Park Dr NW, Atlanta, GA
+          </a>
+        </div>
+
+        <div class="travel-times">
+          <div class="tt-badge">🚶 0.2 mi to State Farm Arena</div>
+          <div class="tt-badge">🚗 11 mi to ATL Airport</div>
+        </div>
+
         <div class="confirm-grid">
           <div class="confirm-item"><span class="ci-label">Confirmation #</span><span class="ci-value ci-highlight">984335566</span></div>
           <div class="confirm-item"><span class="ci-label">Check-In</span><span class="ci-value">After 3:00 PM</span></div>
         </div>
         <div class="hotel-actions">
-          <a href="#" class="btn btn-primary">🗺️ Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Reverb+by+Hard+Rock+Atlanta+Downtown" target="_blank" class="btn btn-primary">🗺️ Get Directions</a>
         </div>
       </div>
     </div>
@@ -331,13 +351,25 @@
       </div>
       <div class="hotel-detail">
         <h3>Holiday Inn Downtown Superdome</h3>
-        <div class="hotel-address">📍 330 Loyola Ave, New Orleans, LA 70112</div>
+        
+        <div class="hotel-address">
+          <span>📍</span> 
+          <a href="https://www.google.com/maps/search/?api=1&query=330+Loyola+Ave,+New+Orleans,+LA" target="_blank">
+            330 Loyola Ave, New Orleans, LA 70112
+          </a>
+        </div>
+
+        <div class="travel-times">
+          <div class="tt-badge">🚶 0.4 mi to Smoothie King Ctr</div>
+          <div class="tt-badge">🚗 13 mi to MSY Airport</div>
+        </div>
+
         <div class="confirm-grid">
           <div class="confirm-item"><span class="ci-label">Confirmation #</span><span class="ci-value ci-highlight">984368562</span></div>
           <div class="confirm-item"><span class="ci-label">Check-In</span><span class="ci-value">After 4:00 PM</span></div>
         </div>
         <div class="hotel-actions">
-          <a href="#" class="btn btn-primary">🗺️ Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Holiday+Inn+Downtown+Superdome+New+Orleans" target="_blank" class="btn btn-primary">🗺️ Get Directions</a>
         </div>
       </div>
     </div>
@@ -405,13 +437,25 @@
       </div>
       <div class="hotel-detail">
         <h3>SpringHill Suites Intercontinental Airport</h3>
-        <div class="hotel-address">📍 15840 John F Kennedy Blvd, Houston, TX</div>
+        
+        <div class="hotel-address">
+          <span>📍</span> 
+          <a href="https://www.google.com/maps/search/?api=1&query=15840+John+F+Kennedy+Blvd,+Houston,+TX" target="_blank">
+            15840 John F Kennedy Blvd, Houston, TX
+          </a>
+        </div>
+
+        <div class="travel-times">
+          <div class="tt-badge">🚗 21 mi to Toyota Center</div>
+          <div class="tt-badge">🚌 2 mi to IAH Airport</div>
+        </div>
+
         <div class="confirm-grid">
           <div class="confirm-item"><span class="ci-label">Confirmation #</span><span class="ci-value ci-highlight">984375190</span></div>
           <div class="confirm-item"><span class="ci-label">Check-In</span><span class="ci-value">After 3:00 PM</span></div>
         </div>
         <div class="hotel-actions">
-          <a href="#" class="btn btn-primary">🗺️ Get Directions</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=SpringHill+Suites+Intercontinental+Airport+Houston" target="_blank" class="btn btn-primary">🗺️ Get Directions</a>
         </div>
       </div>
     </div>
