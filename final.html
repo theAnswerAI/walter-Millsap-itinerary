@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Walter & Alec Millsap — Master Travel Itinerary | ShoTravel</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
     --navy: #0B1F3A;
@@ -22,6 +22,11 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+  }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -54,91 +59,4 @@
     background: var(--gold); color: var(--navy);
     font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600;
     letter-spacing: 2px; text-transform: uppercase;
-    padding: 8px 16px; border-radius: 4px; box-shadow: 0 2px 10px rgba(201,151,58,0.3);
-  }
-  .action-btn {
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-    color: var(--white); padding: 8px 16px; border-radius: 4px;
-    font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;
-  }
-  .action-btn:hover { background: rgba(255,255,255,0.2); }
-
-  .cover h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    font-weight: 600; line-height: 1.1; margin-bottom: 12px;
-  }
-  .cover h1 em { font-style: italic; color: var(--gold-light); font-weight: 400; }
-  .cover-sub { font-size: 18px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 40px; }
-  
-  .cover-meta { display: flex; flex-wrap: wrap; gap: 16px; }
-  .meta-pill {
-    background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px; padding: 12px 20px; flex: 1; min-width: 140px;
-    backdrop-filter: blur(4px);
-  }
-  .meta-pill .label {
-    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--gold-light); font-family: 'DM Mono', monospace; display: block; margin-bottom: 4px;
-  }
-  .meta-pill .value { font-size: 15px; font-weight: 500; color: var(--white); }
-
-  /* ── TIMELINE SPINE ── */
-  .timeline { max-width: 880px; margin: -30px auto 0; padding: 0 20px 60px; position: relative; z-index: 10; }
-
-  /* ── DAY CARD ── */
-  .day-card {
-    margin-bottom: 40px; border-radius: 12px; overflow: hidden;
-    box-shadow: var(--shadow); background: var(--white);
-    border: 1px solid var(--border);
-  }
-
-  .day-header {
-    background: var(--white); color: var(--navy);
-    padding: 24px 28px; display: flex; align-items: center; gap: 20px;
-    border-bottom: 1px solid var(--border);
-  }
-  .day-num {
-    font-family: 'Playfair Display', serif; font-size: 42px; font-style: italic;
-    color: var(--gold); line-height: 1; min-width: 50px;
-  }
-  .day-label {
-    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500;
-    letter-spacing: 2px; text-transform: uppercase; color: var(--slate); margin-bottom: 4px;
-  }
-  .day-title { font-size: 22px; font-weight: 700; color: var(--navy); }
-  .day-date {
-    margin-left: auto; text-align: right; font-size: 14px;
-    color: var(--slate); font-weight: 500; background: var(--sky);
-    padding: 8px 16px; border-radius: 8px; color: var(--navy-light);
-  }
-
-  .card-body { padding: 28px; }
-
-  /* ── SECTIONS ── */
-  .section-title {
-    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 600;
-    letter-spacing: 2px; text-transform: uppercase; color: var(--gold);
-    margin-bottom: 16px; margin-top: 10px; display: flex; align-items: center; gap: 8px;
-  }
-  .section-title::before { content: attr(data-icon); font-size: 16px; }
-
-  /* ── FLIGHT BLOCK ── */
-  .flight-box { border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 28px; }
-  .flight-row { display: flex; align-items: center; gap: 0; margin-bottom: 16px; }
-  .flight-city { text-align: center; min-width: 70px; }
-  .flight-city .code { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; line-height: 1; color: var(--navy); }
-  .flight-city .name { font-size: 11px; color: var(--slate); margin-top: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
-  .flight-city .time { font-size: 14px; font-weight: 600; color: var(--navy); margin-top: 6px; }
-  .flight-middle { flex: 1; text-align: center; padding: 0 16px; position: relative; }
-  .flight-line { height: 2px; background: var(--border); position: relative; margin: 12px 0; }
-  .flight-line::after { content: '✈'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--white); padding: 0 8px; font-size: 16px; color: var(--gold); }
-  .flight-info { font-size: 12px; color: var(--slate); font-weight: 500; }
-  
-  .flight-meta { display: flex; gap: 8px; flex-wrap: wrap; background: var(--sky); padding: 12px; border-radius: 6px; }
-  .flight-tag { font-size: 11px; font-weight: 600; background: var(--white); border: 1px solid rgba(11,31,58,0.1); color: var(--navy); padding: 4px 10px; border-radius: 4px; font-family: 'DM Mono', monospace; display: flex; align-items: center; gap: 6px;}
-  .flight-tag.airline { background: var(--navy); color: var(--white); border: none; }
-
-  /* ── HOTEL BLOCK ── */
-  .hotel-block { display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: stretch; background: var(--white); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; margin-bottom: 28px; }
-  .hotel-img-wrap { background: #eee
+    padding: 8px 16px; border-radius: 4px; box-shadow:
