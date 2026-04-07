@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operational Itinerary | SoCal Circuit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .ticket-card { transition: transform 0.2s ease-in-out; }
+        .ticket-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <header class="bg-slate-900 text-white py-8 px-6 shadow-md">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold tracking-tight">Southern California Deployment</h1>
+            <p class="text-slate-300 mt-2 text-lg">Personnel: Walter Millsap & Jax Millsap</p>
+            <p class="text-slate-400 text-sm mt-1">Operational Window: April 7 – April 9, 2026</p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto py-8 px-4 sm:px-6">
+
+        <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+            <h2 class="text-xl font-semibold border-b pb-2 mb-4 text-slate-800">Mission Overview</h2>
+            <p class="text-gray-600 leading-relaxed">
+                48-hour high-efficiency entertainment circuit. Logistics prioritize VIP access tiers (Gold Fastrack, Lightning Lane Multi Pass) to eliminate queue friction. Primary node: Hotel Fera Anaheim.
+            </p>
+        </section>
+
+        <section class="mb-10">
+            <div class="flex items-center mb-4">
+                <div class="bg-blue-600 w-3 h-8 rounded-full mr-3"></div>
+                <h2 class="text-2xl font-bold text-gray-800">Phase 1: Tuesday, April 7</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-gray-100 pb-4">
+                        <div class="sm:w-32 font-semibold text-blue-600 shrink-0">07:30 AM</div>
+                        <div>
+                            <h3 class="font-bold text-lg">Transit to Carlsbad</h3>
+                            <p class="text-gray-500 text-sm">Depart Los Angeles via I-5 South.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-gray-100 pb-4">
+                        <div class="sm:w-32 font-semibold text-blue-600 shrink-0">09:30 AM</div>
+                        <div class="w-full">
+                            <h3 class="font-bold text-lg">Legoland California Resort</h3>
+                            <p class="text-gray-500 text-sm mb-4">Execute arrival via Preferred Parking. Activate Gold Fastrack upon entry.</p>
+                            
+                            <h4 class="font-semibold text-sm text-gray-400 uppercase tracking-wider mb-3">Digital Assets</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="ticket-card bg-gray-50 p-2 rounded-lg border border-gray-200 text-center">
+                                    <img src="legoland-parking.png" alt="Preferred Parking" class="w-full h-auto rounded">
+                                    <span class="block text-xs font-semibold mt-2">Preferred Parking</span>
+                                </div>
+                                <div class="ticket-card bg-gray-50 p-2 rounded-lg border border-gray-200 text-center">
+                                    <img src="legoland-admission-1.png" alt="Admission 1" class="w-full h-auto rounded">
+                                    <span class="block text-xs font-semibold mt-2">Resort Hopper 1</span>
+                                </div>
+                                <div class="ticket-card bg-gray-50 p-2 rounded-lg border border-gray-200 text-center">
+                                    <img src="legoland-admission-2.png" alt="Admission 2" class="w-full h-auto rounded">
+                                    <span class="block text-xs font-semibold mt-2">Resort Hopper 2</span>
+                                </div>
+                                <div class="ticket-card bg-gray-50 p-2 rounded-lg border border-gray-200 text-center">
+                                    <img src="legoland-fastrack-1.png" alt="Fastrack 1" class="w-full h-auto rounded">
+                                    <span class="block text-xs font-semibold mt-2">Gold Fastrack 1</span>
+                                </div>
+                                <div class="ticket-card bg-gray-50 p-2 rounded-lg border border-gray-200 text-center">
+                                    <img src="legoland-fastrack-2.png" alt="Fastrack 2" class="w-full h-auto rounded">
+                                    <span class="block text-xs font-semibold mt-2">Gold Fastrack 2</span>
+                                </div>
+                                <div class="ticket-card bg-gray-50 p-2 rounded-lg border border-gray-200 text-center">
+                                    <img src="legoland-minifigure.png" alt="Minifigures" class="w-full h-auto rounded">
+                                    <span class="block text-xs font-semibold mt-2">Custom Minifigures</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-gray-100 pb-4">
+                        <div class="sm:w-32 font-semibold text-blue-600 shrink-0">04:00 PM</div>
+                        <div>
+                            <h3 class="font-bold text-lg">Inter-Node Transit</h3>
+                            <p class="text-gray-500 text-sm">Northbound drive from Carlsbad to Orange/Anaheim.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="sm:w-32 font-semibold text-blue-600 shrink-0">05:30 PM</div>
+                        <div>
+                            <h3 class="font-bold text-lg">Basecamp Initialization</h3>
+                            <p class="text-gray-500 text-sm">Check-in at Hotel Fera Anaheim (Confirmation #: 94599915).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <div class="flex items-center mb-4">
+                <div class="bg-purple-600 w-3 h-8 rounded-full mr-3"></div>
+                <h2 class="text-2xl font-bold text-gray-800">Phase 2: Wednesday, April 8</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-gray-100 pb-4">
+                        <div class="sm:w-32 font-semibold text-purple-600 shrink-0">07:00 AM</div>
+                        <div>
+                            <h3 class="font-bold text-lg">Digital Asset Management</h3>
+                            <p class="text-gray-500 text-sm">Initialize Disneyland app to secure first Lightning Lane Multi Pass block.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="sm:w-32 font-semibold text-purple-600 shrink-0">08:00 AM</div>
+                        <div class="w-full">
+                            <h3 class="font-bold text-lg">Disneyland Park Deployment</h3>
+                            <p class="text-gray-500 text-sm mb-4">Entry mandated at Disneyland Park. Manage queues actively via mobile app.</p>
+                            
+                            <h4 class="font-semibold text-sm text-gray-400 uppercase tracking-wider mb-3">Digital Assets</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="ticket-card bg-purple-50 p-3 rounded-xl border border-purple-100 shadow-sm text-center">
+                                    <img src="walter-disney.png" alt="Walter Disney Pass" class="w-full h-auto rounded border border-gray-200">
+                                    <span class="block text-sm font-bold text-purple-900 mt-3">Walter Millsap (Age 10+)</span>
+                                    <span class="block text-xs text-purple-700">Tier 2 Park Hopper + Multi Pass</span>
+                                </div>
+                                <div class="ticket-card bg-purple-50 p-3 rounded-xl border border-purple-100 shadow-sm text-center">
+                                    <img src="jax-disney.png" alt="Jax Disney Pass" class="w-full h-auto rounded border border-gray-200">
+                                    <span class="block text-sm font-bold text-purple-900 mt-3">Jax Millsap (Age 3-9)</span>
+                                    <span class="block text-xs text-purple-700">Tier 2 Park Hopper + Multi Pass</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <div class="flex items-center mb-4">
+                <div class="bg-gray-800 w-3 h-8 rounded-full mr-3"></div>
+                <h2 class="text-2xl font-bold text-gray-800">Phase 3: Thursday, April 9</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-gray-100 pb-4">
+                        <div class="sm:w-32 font-semibold text-gray-800 shrink-0">09:00 AM</div>
+                        <div>
+                            <h3 class="font-bold text-lg">Demobilization</h3>
+                            <p class="text-gray-500 text-sm">Final hardware pack-down and operational debrief.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-gray-100 pb-4">
+                        <div class="sm:w-32 font-semibold text-gray-800 shrink-0">11:00 AM</div>
+                        <div>
+                            <h3 class="font-bold text-lg">Checkout</h3>
+                            <p class="text-gray-500 text-sm">Hotel Fera deadline.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="sm:w-32 font-semibold text-gray-800 shrink-0">11:15 AM</div>
+                        <div>
+                            <h3 class="font-bold text-lg">Extraction</h3>
+                            <p class="text-gray-500 text-sm">Initiate return transit vector to Los Angeles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
