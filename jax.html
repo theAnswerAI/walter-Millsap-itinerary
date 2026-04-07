@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,30 +8,41 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Nunito', sans-serif; background-color: #f0f9ff; }
+        body { font-family: 'Nunito', sans-serif; background-color: #f8fafc; }
         .ticket-card { transition: all 0.2s ease-in-out; }
         .ticket-card:hover { transform: scale(1.03) translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
-        .bg-pattern { background-image: radial-gradient(#bae6fd 20%, transparent 20%), radial-gradient(#bae6fd 20%, transparent 20%); background-position: 0 0, 10px 10px; background-size: 20px 20px; }
+        /* Modernized background pattern */
+        .bg-pattern { background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px); background-size: 30px 30px; }
+        /* Modern Header styling */
+        .modern-header { background: white; border-bottom: 1px solid #e2e8f0; }
+        .hero-title { background: linear-gradient(to right, #0ea5e9, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="text-slate-800 antialiased bg-pattern">
+<body class="text-slate-900 antialiased bg-pattern flex flex-col min-h-screen">
 
-    <header class="bg-gradient-to-r from-sky-400 to-blue-500 text-white py-10 px-6 shadow-lg rounded-b-3xl mb-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-2">🌴 Jax Big Spring Break Adventure! 🌴</h1>
-            <p class="text-blue-100 text-xl font-bold">Starring: Walter & Jax</p>
-            <p class="text-blue-50 text-md mt-2 bg-black/10 inline-block px-4 py-1 rounded-full">April 7 – April 9, 2026</p>
+    <header class="modern-header py-12 px-6 shadow-sm">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div class="text-center md:text-left">
+                <p class="text-slate-500 font-bold tracking-widest uppercase text-sm mb-1"> Millsap Family</p>
+                <h1 class="hero-title text-5xl md:text-6xl font-black tracking-tighter mb-1">Spring Break!</h1>
+                <p class="text-slate-400 text-lg font-medium">Walter & Jax • 🎡 ✨ 🌴</p>
+            </div>
+            <div class="text-center md:text-right bg-slate-900 text-white px-6 py-4 rounded-3xl shadow-lg border-4 border-white">
+                <p class="text-sm font-bold text-slate-300">Deployment Window</p>
+                <p class="text-xl font-extrabold">April 7 – 9, 2026</p>
+                <p class="text-xs text-slate-400">48-Hour Southern California Circuit</p>
+            </div>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto py-4 px-4 sm:px-6">
+    <main class="max-w-4xl mx-auto py-8 px-4 sm:px-6 flex-grow">
 
-        <section class="bg-white rounded-3xl shadow-md border-4 border-yellow-300 p-6 mb-10 text-center">
-            <h2 class="text-2xl font-bold text-yellow-500 mb-3">✨ The Master Plan ✨</h2>
+        <section class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 mb-10 text-center">
+            <h2 class="text-2xl font-bold text-sky-600 mb-3">The Awesome Plan 🚀</h2>
             <p class="text-slate-600 text-lg font-medium">
                 Get ready for the ultimate 48-hour road trip! We are skipping the boring lines with our VIP passes and heading straight for the fun at Legoland and Disneyland!
             </p>
-            <p class="text-sm text-slate-400 mt-4 italic">(Tap any ticket below to make it giant for the scanners!)</p>
+            <p class="text-xs text-slate-400 mt-5 italic">(Tap any ticket below to make it giant for the scanners!)</p>
         </section>
 
         <section class="mb-12">
@@ -39,11 +51,11 @@
                 <h2 class="text-3xl font-black text-red-500">Day 1: Awesome Legoland!</h2>
             </div>
             
-            <div class="bg-white rounded-3xl shadow-md border-2 border-red-100 p-6 overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -z-10"></div>
+            <div class="bg-white rounded-3xl shadow-md border border-red-50 p-6 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -z-10 opacity-50"></div>
                 <div class="space-y-8">
                     
-                    <div class="flex flex-col sm:flex-row gap-4 border-b-2 border-slate-100 pb-6">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-slate-100 pb-6">
                         <div class="sm:w-32 font-bold text-xl text-red-500 shrink-0">07:30 AM</div>
                         <div>
                             <h3 class="font-bold text-2xl mb-1">🚗 Road Trip Time!</h3>
@@ -51,45 +63,45 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row gap-4 border-b-2 border-slate-100 pb-6">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-slate-100 pb-6">
                         <div class="sm:w-32 font-bold text-xl text-red-500 shrink-0">09:30 AM</div>
                         <div class="w-full">
                             <h3 class="font-bold text-2xl mb-2">🎢 Hello Legoland!</h3>
-                            <p class="text-slate-500 text-lg mb-6">Parking like VIPs and using our Gold Fastracks to zoom past the lines.</p>
+                            <p class="text-slate-500 text-lg mb-6">Preferred Parking (ID: 300800...) used upon arrival. Zoom past standard queues with Gold Fastracks active (IDs: 3000...457, 3000...471).</p>
                             
-                            <div class="bg-red-50 p-4 rounded-2xl border border-red-100">
-                                <h4 class="font-bold text-red-400 uppercase tracking-widest mb-4 flex items-center">🎟️ Our Magic Tickets</h4>
+                            <div class="bg-red-50 p-5 rounded-2xl border border-red-100">
+                                <h4 class="font-bold text-red-400 uppercase tracking-widest mb-4 flex items-center text-sm">🎟️ Admission & Upgrades</h4>
                                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                    <div class="ticket-card bg-white p-3 rounded-xl border-2 border-slate-200 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0791.jpeg')">
+                                    <div class="ticket-card bg-white p-3 rounded-xl border border-slate-200 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0791.jpeg')">
                                         <img src="Images/IMG_0791.jpeg" alt="Preferred Parking" class="w-full h-auto rounded-lg">
-                                        <span class="block text-sm font-bold text-slate-700 mt-2">VIP Parking</span>
+                                        <span class="block text-xs font-semibold text-slate-700 mt-2">VIP Parking</span>
                                     </div>
-                                    <div class="ticket-card bg-white p-3 rounded-xl border-2 border-slate-200 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0792.jpeg')">
+                                    <div class="ticket-card bg-white p-3 rounded-xl border border-slate-200 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0792.jpeg')">
                                         <img src="Images/IMG_0792.jpeg" alt="Admission 1" class="w-full h-auto rounded-lg">
-                                        <span class="block text-sm font-bold text-slate-700 mt-2">Park Hopper 1</span>
+                                        <span class="block text-xs font-semibold text-slate-700 mt-2">Park Hopper 1</span>
                                     </div>
-                                    <div class="ticket-card bg-white p-3 rounded-xl border-2 border-slate-200 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0793.jpeg')">
+                                    <div class="ticket-card bg-white p-3 rounded-xl border border-slate-200 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0793.jpeg')">
                                         <img src="Images/IMG_0793.jpeg" alt="Admission 2" class="w-full h-auto rounded-lg">
-                                        <span class="block text-sm font-bold text-slate-700 mt-2">Park Hopper 2</span>
+                                        <span class="block text-xs font-semibold text-slate-700 mt-2">Park Hopper 2</span>
                                     </div>
-                                    <div class="ticket-card bg-white p-3 rounded-xl border-2 border-yellow-300 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0794.jpeg')">
+                                    <div class="ticket-card bg-white p-3 rounded-xl border border-yellow-300 shadow-sm text-center cursor-pointer" onclick="openLightbox('Images/IMG_0794.jpeg')">
                                         <img src="Images/IMG_0794.jpeg" alt="Fastrack 1" class="w-full h-auto rounded-lg">
-                                        <span class="block text-sm font-bold text-yellow-600 mt-2">Gold Fastrack!</span>
+                                        <span class="block text-xs font-semibold text-yellow-600 mt-2">Gold Fastrack!</span>
                                     </div>
-                                    <div class="ticket-card bg-white p-3 rounded-xl border-2 border-yellow-300 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0795.jpeg')">
+                                    <div class="ticket-card bg-white p-3 rounded-xl border border-yellow-300 shadow-sm text-center cursor-pointer" onclick="openLightbox('Images/IMG_0795.jpeg')">
                                         <img src="Images/IMG_0795.jpeg" alt="Fastrack 2" class="w-full h-auto rounded-lg">
-                                        <span class="block text-sm font-bold text-yellow-600 mt-2">Gold Fastrack!</span>
+                                        <span class="block text-xs font-semibold text-yellow-600 mt-2">Gold Fastrack!</span>
                                     </div>
-                                    <div class="ticket-card bg-white p-3 rounded-xl border-2 border-blue-300 text-center cursor-pointer" onclick="openLightbox('Images/IMG_0796.jpeg')">
+                                    <div class="ticket-card bg-white p-3 rounded-xl border border-blue-300 shadow-sm text-center cursor-pointer" onclick="openLightbox('Images/IMG_0796.jpeg')">
                                         <img src="Images/IMG_0796.jpeg" alt="Minifigures" class="w-full h-auto rounded-lg">
-                                        <span class="block text-sm font-bold text-blue-600 mt-2">Minifigure Fun</span>
+                                        <span class="block text-xs font-semibold text-blue-600 mt-2">Custom Minifigs</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex flex-col sm:flex-row gap-4 border-b-2 border-slate-100 pb-6">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-slate-100 pb-6">
                         <div class="sm:w-32 font-bold text-xl text-red-500 shrink-0">04:00 PM</div>
                         <div>
                             <h3 class="font-bold text-2xl mb-1">🗺️ Next Stop: Anaheim</h3>
@@ -99,9 +111,32 @@
 
                     <div class="flex flex-col sm:flex-row gap-4">
                         <div class="sm:w-32 font-bold text-xl text-red-500 shrink-0">05:30 PM</div>
-                        <div>
-                            <h3 class="font-bold text-2xl mb-1">🏨 Check-in!</h3>
-                            <p class="text-slate-500 text-lg">Arriving at Hotel Fera to relax and grab a warm cookie. (Conf #: 94599915)</p>
+                        <div class="w-full">
+                            <h3 class="font-bold text-2xl mb-4">🏨 Check-in!</h3>
+                            
+                            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-6 shadow-inner">
+                                <div class="flex flex-col md:flex-row gap-6">
+                                    <img src="Images/IMG_0799.jpeg" alt="Hotel Fera Anaheim" class="w-full md:w-48 h-32 object-cover rounded-xl shadow-sm">
+                                    <div class="flex-grow">
+                                        <h4 class="font-black text-xl text-slate-900 mb-1">Hotel Fera Anaheim, a DoubleTree</h4>
+                                        <p class="text-slate-600 mb-3 font-medium">Walter Millsap (Conf #: 94599915) • Two Double Beds</p>
+                                        
+                                        <div class="space-y-2 text-sm text-slate-500 mb-5">
+                                            <p class="flex items-center gap-2">📍 <span>100 The City Drive S, Orange, CA 92868</span></p>
+                                            <p class="flex items-center gap-2">📞 <span>+1 (714) 634-4500</span></p>
+                                        </div>
+
+                                        <div class="flex gap-3">
+                                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Fera+Anaheim+100+The+City+Drive+S+Orange+CA" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm px-5 py-2.5 rounded-full shadow-sm flex items-center gap-1.5 transition">
+                                                🗺️ Get Directions
+                                            </a>
+                                            <a href="tel:17146344500" class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-sm px-5 py-2.5 rounded-full shadow-sm transition flex items-center gap-1.5">
+                                                📞 Call Front Desk
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,14 +149,14 @@
                 <h2 class="text-3xl font-black text-indigo-500">Day 2: Disney Magic!</h2>
             </div>
             
-            <div class="bg-white rounded-3xl shadow-md border-2 border-indigo-100 p-6 overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-bl-full -z-10"></div>
+            <div class="bg-white rounded-3xl shadow-md border border-indigo-50 p-6 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-bl-full -z-10 opacity-50"></div>
                 <div class="space-y-8">
-                    <div class="flex flex-col sm:flex-row gap-4 border-b-2 border-slate-100 pb-6">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-slate-100 pb-6">
                         <div class="sm:w-32 font-bold text-xl text-indigo-500 shrink-0">07:00 AM</div>
                         <div>
                             <h3 class="font-bold text-2xl mb-1">📱 Morning Setup</h3>
-                            <p class="text-slate-500 text-lg">Walter gets the app ready to book our first lightning-fast rides!</p>
+                            <p class="text-slate-500 text-lg">Walter gets the app ready to book our first lightning-fast rides! (Multi Pass active).</p>
                         </div>
                     </div>
 
@@ -129,20 +164,20 @@
                         <div class="sm:w-32 font-bold text-xl text-indigo-500 shrink-0">08:00 AM</div>
                         <div class="w-full">
                             <h3 class="font-bold text-2xl mb-2">✨ Disneyland Time!</h3>
-                            <p class="text-slate-500 text-lg mb-6">We start at Disneyland Park! Get ready for Mickey, Space Mountain, and lots of snacks.</p>
+                            <p class="text-slate-500 text-lg mb-6">Reservation matrix: Walter (Age 10+), Jax (Age 3-9). Entry at Disneyland Park. Park Hopping protocol (DD84045...) active after defined hours.</p>
                             
-                            <div class="bg-indigo-50 p-4 rounded-2xl border border-indigo-100">
-                                <h4 class="font-bold text-indigo-400 uppercase tracking-widest mb-4 flex items-center">🎟️ Disney Passes</h4>
+                            <div class="bg-indigo-50 p-5 rounded-2xl border border-indigo-100">
+                                <h4 class="font-bold text-indigo-400 uppercase tracking-widest mb-4 flex items-center text-sm">🎟️ Park Hopper Passes</h4>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div class="ticket-card bg-white p-4 rounded-2xl border-4 border-purple-200 shadow-sm text-center cursor-pointer" onclick="openLightbox('Images/IMG_0797.jpeg')">
-                                        <img src="Images/IMG_0797.jpeg" alt="Walter Disney Pass" class="w-full h-auto rounded-lg border-2 border-slate-100">
+                                        <img src="Images/IMG_0797.jpeg" alt="Walter Disney Pass" class="w-full h-auto rounded-lg border border-slate-100">
                                         <span class="block text-xl font-black text-purple-700 mt-4">Walter's Pass 🧔🏾</span>
-                                        <span class="block text-sm font-bold text-slate-500">Lightning Lane Ready!</span>
+                                        <span class="block text-sm font-bold text-slate-500">Tier 2 Park Hopper</span>
                                     </div>
                                     <div class="ticket-card bg-white p-4 rounded-2xl border-4 border-blue-200 shadow-sm text-center cursor-pointer" onclick="openLightbox('Images/IMG_0798.jpeg')">
-                                        <img src="Images/IMG_0798.jpeg" alt="Jax Disney Pass" class="w-full h-auto rounded-lg border-2 border-slate-100">
+                                        <img src="Images/IMG_0798.jpeg" alt="Jax Disney Pass" class="w-full h-auto rounded-lg border border-slate-100">
                                         <span class="block text-xl font-black text-blue-600 mt-4">Jax's Pass 👦🏾</span>
-                                        <span class="block text-sm font-bold text-slate-500">Lightning Lane Ready!</span>
+                                        <span class="block text-sm font-bold text-slate-500">Tier 2 Park Hopper</span>
                                     </div>
                                 </div>
                             </div>
@@ -158,17 +193,17 @@
                 <h2 class="text-3xl font-black text-emerald-500">Day 3: Heading Home</h2>
             </div>
             
-            <div class="bg-white rounded-3xl shadow-md border-2 border-emerald-100 p-6 overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -z-10"></div>
+            <div class="bg-white rounded-3xl shadow-md border border-emerald-50 p-6 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full -z-10 opacity-50"></div>
                 <div class="space-y-6">
-                    <div class="flex flex-col sm:flex-row gap-4 border-b-2 border-slate-100 pb-4">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-slate-100 pb-4">
                         <div class="sm:w-32 font-bold text-xl text-emerald-500 shrink-0">09:00 AM</div>
                         <div>
                             <h3 class="font-bold text-2xl mb-1">🎒 Pack it Up!</h3>
                             <p class="text-slate-500 text-lg">Time to gather all our souvenirs and pack our bags.</p>
                         </div>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-4 border-b-2 border-slate-100 pb-4">
+                    <div class="flex flex-col sm:flex-row gap-4 border-b border-slate-100 pb-4">
                         <div class="sm:w-32 font-bold text-xl text-emerald-500 shrink-0">11:00 AM</div>
                         <div>
                             <h3 class="font-bold text-2xl mb-1">👋 Goodbye Hotel</h3>
@@ -178,7 +213,7 @@
                     <div class="flex flex-col sm:flex-row gap-4">
                         <div class="sm:w-32 font-bold text-xl text-emerald-500 shrink-0">11:15 AM</div>
                         <div>
-                            <h3 class="font-bold text-2xl mb-1">🛣️ See Ya Later!</h3>
+                            <h3 class="font-bold text-2xl mb-1">🛣️ Home Time</h3>
                             <p class="text-slate-500 text-lg">Driving back home to Los Angeles with awesome memories!</p>
                         </div>
                     </div>
@@ -188,9 +223,13 @@
 
     </main>
 
-    <div id="lightbox" class="fixed inset-0 bg-slate-900/95 z-50 hidden flex-col justify-center items-center p-4 backdrop-blur-sm cursor-pointer transition-opacity" onclick="closeLightbox()">
-        <p class="text-white font-bold mb-4 bg-black/50 px-4 py-2 rounded-full">Tap anywhere to close ✖</p>
-        <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] rounded-2xl shadow-2xl border-4 border-white">
+    <footer class="text-center py-10 px-6 border-t border-slate-100 mt-10 bg-white">
+        <p class="text-slate-400 text-sm">Prepared with ❤️ by <span class="font-bold text-slate-500">shoTravel</span></p>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 bg-slate-950/95 z-50 hidden flex-col justify-center items-center p-4 backdrop-blur-sm cursor-pointer transition-opacity" onclick="closeLightbox()">
+        <p class="text-white font-bold mb-5 bg-black/50 px-5 py-2 rounded-full text-sm">Tap anywhere to close ✖</p>
+        <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] rounded-3xl shadow-2xl border-4 border-white">
     </div>
 
     <script>
@@ -200,12 +239,16 @@
             lightboxImg.src = imageSrc;
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
+            // Prevent scrolling background
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.add('hidden');
             lightbox.classList.remove('flex');
+            // Restore scrolling
+            document.body.style.overflow = '';
         }
     </script>
 </body>
